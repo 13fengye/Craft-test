@@ -3,19 +3,28 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "next dev",
+    "dev": "concurrently \"nodemon --ext js,jsx --exec 'yarn build'\"",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "watch": "webpack --watch"
   },
   "dependencies": {
+    "@babel/core": "^7.22.5",
+    "@babel/preset-react": "^7.22.5",
     "autoprefixer": "10.4.14",
+    "babel-loader": "^9.1.2",
     "eslint": "8.44.0",
     "eslint-config-next": "13.4.7",
     "next": "13.4.7",
+    "path": "^0.12.7",
     "postcss": "8.4.24",
     "react": "18.2.0",
     "react-dom": "18.2.0",
-    "tailwindcss": "3.3.2"
+    "tailwindcss": "3.3.2",
+    "webpack": "^5.88.1"
+  },
+  "devDependencies": {
+    "webpack-cli": "^5.1.4"
   }
 }
